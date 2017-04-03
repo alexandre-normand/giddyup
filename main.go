@@ -169,7 +169,7 @@ func getCurrentVersion(path string, lazyInit bool) (string, error) {
 }
 
 func getNextVersion(version string, mode string) (string, error) {
-	versionRegEx := regexp.MustCompile("\\A(\\d)+\\.(\\d)\\.(\\d)+\\z")
+	versionRegEx := regexp.MustCompile("\\A(\\d+)\\.(\\d+)\\.(\\d+)\\z")
 
 	if versionRegEx.MatchString(version) {
 		matches := versionRegEx.FindAllStringSubmatch(version, -1)[0]
