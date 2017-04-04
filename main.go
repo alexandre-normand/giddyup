@@ -193,8 +193,11 @@ func getNextVersion(version string, mode string) (string, error) {
 			patchVersion = patchVersion + 1
 		case "MINOR":
 			minorVersion = minorVersion + 1
+			patchVersion = 0
 		case "MAJOR":
 			majorVersion = majorVersion + 1
+			minorVersion = 0
+			patchVersion = 0
 		}
 
 		return fmt.Sprintf("%d.%d.%d", majorVersion, minorVersion, patchVersion), nil
